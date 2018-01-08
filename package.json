@@ -1,0 +1,17 @@
+{
+    "name": "com.phonegap.helloworld",
+    "version": "1.0.0",
+    "displayName": "Dog years Calculator",
+    "cordova": {
+        "platforms": [
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-camera": {}
+        }
+    },
+    "dependencies": {
+        "cordova-android": "~6.2.3",
+        "cordova-plugin-camera": "~2.4.1"
+    }
+}

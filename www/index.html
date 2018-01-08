@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Dog Years Calculator</title>
+        <script>
+            window.onload=function()
+            {
+                document.getElementById('btnCalc').addEventListener('click', calcAge);
+                document.getElementById('btnTakePic').addEventListener('click', takePicture);
+            }
+            function calcAge(e)
+            {
+                var age = document.getElementById('dogAge').value;
+                age = age*7;
+                var result = "In dog years, your dog is : " + age;
+                document.getElementById('result').innerHTML=result;
+            }
+            function takePicture(e)
+            {
+                navigator.camera.getPicture(function (imageUri) {
+                    var lastPhotoContainer = document.getElementById("lastPhoto");
+                    
+                    alert("Looking good");
+                    
+                    lastPhotoContainer.innerHTML = "<img src='" + imageUri + "' style='width: 75%;' />";
+                }, null, null);
+            };
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <h1>Dog Years Calculator</h1>
+        <label for="dogAge">Dog age in human years:</label>
+        <input id="dogAge" type="number" /> 
+        <button id="btnCalc">Calculate</button>
+        <div id="result"></div>
+        <button id="btnTakePic">Take Picture</button>
+        <div id="lastPhoto"></div>
+    </body>
+</html>
